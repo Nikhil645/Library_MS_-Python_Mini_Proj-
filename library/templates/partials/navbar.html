@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Library system</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+                <li><a href="{% url 'books' %}">Home</a></li>
+            <li class="nav navbar-nav navbar-left">
+                <a href="{% url 'books' %}" style="margin-left:5px"><b>Books</b></a>
+            </li>
+            <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:max-content;margin-left:5px"><b>Transaction</b>
+                </a>
+                <div class="dropdown-menu mr-auto" style="min-width: 8pc; min-height: 63px; background-color: mediumseagreen;" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'borrow' %}" style="font-size: large;
+                    font-family: sans-serif;
+                    margin-left: 13px;
+                    color: white;">Borrowing</a>
+                    <a class="dropdown-item" href="{% url 'returning' %}" style="font-size: large;
+                    font-family: sans-serif;
+                    margin-left: 13px;
+                    color: white;">Returning</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:max-content;margin-left:5px"><b>Accounts</b>
+                    </a>
+                    <div class="dropdown-menu mr-auto" style="min-width: 8pc; min-height: 30px; background-color: mediumseagreen;" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'students' %}" style="font-size: large;
+                        font-family: sans-serif;
+                        margin-left: 13px;
+                        color: white;">Students</a>
+                    </div>
+                </li>
+                <li class="nav navbar-nav navbar-left">
+                        <a href="{% url 'categories' %}" style="margin-left:5px"><b>Category</b></a>
+                    </li>
+           </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ request.user.username }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
